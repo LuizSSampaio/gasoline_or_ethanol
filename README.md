@@ -13,7 +13,7 @@ Este aplicativo está sendo desenvolvido para estudar e praticar os Widgets de i
 
 ## Instalação
 
-Instale gasoline_or_ethanol com npm
+Instale gasoline_or_ethanol
 
 ```bash
   git clone https://github.com/LuizSSampaio/gasoline_or_ethanol.git
