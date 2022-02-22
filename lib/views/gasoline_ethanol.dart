@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -30,16 +31,49 @@ class _GasolineOrEthanolPageState extends State<GasolineOrEthanolPage> {
             const Text('Calcular etanol x gasolina'),
             const Text(
               'Entre com os valores abaixo e pressione calcular para ver qual combustível está compensando mais.',
+              textAlign: TextAlign.center,
             ),
             Form(
               key: _gasolineAndEthanolFormKey,
               child: Column(
-                children: const [
-                  AdvancedTextFormField(),
-                  SizedBox(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: AdvancedTextFormField(
+                      iconData: FontAwesomeIcons.dollarSign,
+                      hintText: 'Ex: 7,988',
+                      labelText: 'Gasolina',
+                    ),
+                  ),
+                  const SizedBox(
                     height: 20.0,
                   ),
-                  AdvancedTextFormField(),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: AdvancedTextFormField(
+                      iconData: FontAwesomeIcons.dollarSign,
+                      hintText: 'Ex: 5,534',
+                      labelText: 'Etanol',
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        if (_gasolineAndEthanolFormKey.currentState!.validate()) {
+
+                        }
+                      },
+                      child: const Text(
+                        'Calcular',
+                        style: TextStyle(
+                          fontSize: 20.0,
+
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
