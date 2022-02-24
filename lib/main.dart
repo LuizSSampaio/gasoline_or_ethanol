@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gasoline_or_ethanol/views/cars.dart';
-import 'package:gasoline_or_ethanol/views/gasoline_ethanol.dart';
+import 'package:gasoline_or_ethanol/views/cars_page.dart';
+import 'package:gasoline_or_ethanol/views/gasoline_ethanol_page.dart';
+import 'package:gasoline_or_ethanol/views/result_page.dart';
 
 import 'views/home_page.dart';
 
@@ -11,9 +12,10 @@ void main() {
       theme: ThemeData.dark(),
       initialRoute: '/',
       routes: {
-        '/': (context) => const HomePage(),
-        '/cars': (context) => const CarsPage(),
-        '/gasolineOrEthanol': (context) => const GasolineOrEthanolPage(),
+        HomePage.routeName: (context) => const HomePage(),
+        CarsPage.routeName: (context) => const CarsPage(),
+        GasolineOrEthanolPage.routeName: (context) => const GasolineOrEthanolPage(),
+        ResultPage.routeName: (context) => const ResultPage(),
       },
     ),
   );
