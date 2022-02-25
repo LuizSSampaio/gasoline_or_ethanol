@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:gasoline_or_ethanol/global_variables.dart';
 import 'package:gasoline_or_ethanol/views/result_page.dart';
 
 import '../components/advanced_text_form_field.dart';
@@ -35,14 +36,24 @@ class _GasolineOrEthanolPageState extends State<GasolineOrEthanolPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Icon(
-              FontAwesomeIcons.calculator,
-              size: 55.0,
+            const Padding(
+              padding: EdgeInsets.all(18.0),
+              child: Icon(
+                FontAwesomeIcons.calculator,
+                size: 55.0,
+              ),
             ),
-            const Text('Calcular etanol x gasolina'),
             const Text(
-              'Entre com os valores abaixo e pressione calcular para ver qual combustível está compensando mais.',
-              textAlign: TextAlign.center,
+              'Calcular etanol x gasolina',
+              style: kTitleStyle,
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'Entre com os valores abaixo e pressione calcular para ver qual combustível está compensando mais.',
+                textAlign: TextAlign.center,
+                style: kDescriptionStyle,
+              ),
             ),
             Form(
               key: _gasolineAndEthanolFormKey,
@@ -96,10 +107,13 @@ class _GasolineOrEthanolPageState extends State<GasolineOrEthanolPage> {
                           );
                         }
                       },
-                      child: const Text(
-                        'Calcular',
-                        style: TextStyle(
-                          fontSize: 20.0,
+                      child: const Padding(
+                        padding: EdgeInsets.all(12.0),
+                        child: Text(
+                          'Calcular',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                          ),
                         ),
                       ),
                     ),

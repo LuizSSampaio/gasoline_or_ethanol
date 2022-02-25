@@ -26,6 +26,17 @@ class ResultPage extends StatelessWidget {
       ),
       body: Column(
         children: [
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              'Resultado',
+              style: kTitleStyle,
+            ),
+          ),
+          const Text(
+            'O combustível que está mais em conta é: ',
+            style: kDescriptionStyle,
+          ),
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Card(
