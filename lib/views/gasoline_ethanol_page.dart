@@ -15,6 +15,15 @@ class GasolineOrEthanolPage extends StatefulWidget {
 
 class _GasolineOrEthanolPageState extends State<GasolineOrEthanolPage> {
   final _gasolineAndEthanolFormKey = GlobalKey<FormState>();
+  final TextEditingController gasolineController = TextEditingController();
+  final TextEditingController ethanolController = TextEditingController();
+
+  @override
+  void dispose() {
+    gasolineController.dispose();
+    ethanolController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,10 +49,11 @@ class _GasolineOrEthanolPageState extends State<GasolineOrEthanolPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: AdvancedTextFormField(
-                      icon: Icon(FontAwesomeIcons.dollarSign),
+                      controller: gasolineController,
+                      icon: const Icon(FontAwesomeIcons.dollarSign),
                       hintText: 'Ex: 7,988',
                       labelText: 'Gasolina',
                     ),
@@ -51,10 +61,11 @@ class _GasolineOrEthanolPageState extends State<GasolineOrEthanolPage> {
                   const SizedBox(
                     height: 20.0,
                   ),
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: AdvancedTextFormField(
-                      icon: Icon(FontAwesomeIcons.dollarSign),
+                      controller: ethanolController,
+                      icon: const Icon(FontAwesomeIcons.dollarSign),
                       hintText: 'Ex: 5,534',
                       labelText: 'Etanol',
                     ),
@@ -69,8 +80,18 @@ class _GasolineOrEthanolPageState extends State<GasolineOrEthanolPage> {
                             context,
                             ResultPage.routeName,
                             arguments: ResultArguments(
-                              2.147,
-                              6.439,
+                              double.parse(
+                                gasolineController.text.replaceFirst(
+                                  RegExp(','),
+                                  '.',
+                                ),
+                              ),
+                              double.parse(
+                                ethanolController.text.replaceFirst(
+                                  RegExp(','),
+                                  '.',
+                                ),
+                              ),
                             ),
                           );
                         }

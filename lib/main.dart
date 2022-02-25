@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gasoline_or_ethanol/views/cars_page.dart';
 import 'package:gasoline_or_ethanol/views/gasoline_ethanol_page.dart';
 import 'package:gasoline_or_ethanol/views/result_page.dart';
 
@@ -13,7 +12,6 @@ void main() {
       initialRoute: '/',
       routes: {
         HomePage.routeName: (context) => const HomePage(),
-        CarsPage.routeName: (context) => const CarsPage(),
         GasolineOrEthanolPage.routeName: (context) => const GasolineOrEthanolPage(),
         ResultPage.routeName: (context) => const ResultPage(),
       },

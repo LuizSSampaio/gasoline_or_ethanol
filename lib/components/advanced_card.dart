@@ -19,7 +19,7 @@ class AdvancedCard extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Card(
-        margin: const EdgeInsets.fromLTRB(4.0, 20.0, 4.0, 0.0),
+        margin: const EdgeInsets.fromLTRB(8.0, 20.0, 8.0, 0.0),
         child: ListTile(
           leading: Icon(icon),
           title: Text(title),

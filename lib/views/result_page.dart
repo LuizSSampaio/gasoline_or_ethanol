@@ -16,7 +16,7 @@ class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments as ResultArguments;
-    gasolineOrEthanol fuel = (args.gasolinePrice > args.ethanolPrice)
+    gasolineOrEthanol fuel = (args.ethanolPrice / args.gasolinePrice > 0.7)
         ? gasolineOrEthanol.gasoline
         : gasolineOrEthanol.ethanol;
 

@@ -5,16 +5,18 @@ import 'package:flutter/services.dart';
 
 class AdvancedTextFormField extends StatelessWidget {
   const AdvancedTextFormField(
-      {Key? key, this.icon, this.hintText, this.labelText})
+      {Key? key, this.icon, this.hintText, this.labelText, this.controller})
       : super(key: key);
 
   final Widget? icon;
+  final TextEditingController? controller;
   final String? hintText;
   final String? labelText;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       keyboardType: const TextInputType.numberWithOptions(
         signed: false,
         decimal: true,
@@ -28,7 +30,7 @@ class AdvancedTextFormField extends StatelessWidget {
       inputFormatters: [
         FilteringTextInputFormatter.allow(RegExp('[0-9,]')),
       ],
-      validator: (value) {
+      validator: (String? value) {
         return (value == null || value.isEmpty) ? 'Digite um valor' : null;
       },
     );
