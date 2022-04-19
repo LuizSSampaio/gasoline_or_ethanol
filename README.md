@@ -6,10 +6,7 @@ Este aplicativo está sendo desenvolvido para estudar e praticar os Widgets de i
 
 ## Funcionalidades
 
-- Salvamento de automóveis
 - Calculo de Gasolina ou Etanol
-- Calculo Distância x Litro
-- Calculo Litro x Distância
 
 ## Instalação
 
@@ -17,6 +14,16 @@ Instale gasoline_or_ethanol
 
 ```bash
   git clone https://github.com/LuizSSampaio/gasoline_or_ethanol.git
+```
+
+```bash
   cd gasoline_or_ethanol
+```
+
+```bash
   flutter pub get
+```
+
+```bash
+  flutter run
 ```
